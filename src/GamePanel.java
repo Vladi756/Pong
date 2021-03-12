@@ -62,7 +62,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	public void checkCollision() {
 		
-		//bounce ball off top & bottom window edges
+		//Bounce ball off top & bottom window borders
 		if(ball.y <=0) {
 			ball.setYDirection(-ball.yVelocity);
 		}
@@ -72,9 +72,9 @@ public class GamePanel extends JPanel implements Runnable{
 		//bounce ball off paddles
 		if(ball.intersects(paddle1)) {
 			ball.xVelocity = Math.abs(ball.xVelocity);
-			ball.xVelocity++; //optional for more difficulty
+			ball.xVelocity++; //optional 
 			if(ball.yVelocity>0)
-				ball.yVelocity++; //optional for more difficulty
+				ball.yVelocity++; //optional 
 			else
 				ball.yVelocity--;
 			ball.setXDirection(ball.xVelocity);
@@ -82,15 +82,15 @@ public class GamePanel extends JPanel implements Runnable{
 		}
 		if(ball.intersects(paddle2)) {
 			ball.xVelocity = Math.abs(ball.xVelocity);
-			ball.xVelocity++; //optional for more difficulty
+			ball.xVelocity++; //optional 
 			if(ball.yVelocity>0)
-				ball.yVelocity++; //optional for more difficulty
+				ball.yVelocity++; //optional 
 			else
 				ball.yVelocity--;
 			ball.setXDirection(-ball.xVelocity);
 			ball.setYDirection(ball.yVelocity);
 		}
-		//stops paddles at window edges
+		//Stops paddles at window borders
 		if(paddle1.y<=0)
 			paddle1.y=0;
 		if(paddle1.y >= (GAME_HEIGHT-PADDLE_HEIGHT))
@@ -99,7 +99,7 @@ public class GamePanel extends JPanel implements Runnable{
 			paddle2.y=0;
 		if(paddle2.y >= (GAME_HEIGHT-PADDLE_HEIGHT))
 			paddle2.y = GAME_HEIGHT-PADDLE_HEIGHT;
-		//give a player 1 point and creates new paddles & ball
+		//Gives player 1 point & creates new paddles & ball
 		if(ball.x <=0) {
 			score.player2++;
 			newPaddles();
@@ -114,7 +114,7 @@ public class GamePanel extends JPanel implements Runnable{
 		}
 	}
 	public void run() {
-		//game loop
+		//Basic Game Loop
 		long lastTime = System.nanoTime();
 		double amountOfTicks =60.0;
 		double ns = 1000000000 / amountOfTicks;
