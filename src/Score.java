@@ -14,6 +14,7 @@ public class Score extends Rectangle{
 			Score.GAME_WIDTH = GAME_WIDTH;
 			Score.GAME_HEIGHT = GAME_HEIGHT;
 	}
+	
 	public void draw(Graphics g) {
 		g.setColor(Color.white);
 		g.setFont(new Font("Consolas", Font.PLAIN, 60));
